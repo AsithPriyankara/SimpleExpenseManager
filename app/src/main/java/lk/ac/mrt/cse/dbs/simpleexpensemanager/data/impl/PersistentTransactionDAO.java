@@ -104,6 +104,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
         }
 
         cursor.close();
+        if(transactionList.size()<limit){return transactionList;}
         return transactionList.subList(transactionList.size() - limit, transactionList.size());
     }
 }
